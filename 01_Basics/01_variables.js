@@ -17,6 +17,7 @@ accountCity = "Nagpur";
 
 console.table([accountId, accountEmail,accountPassword,accountCity,accountState])
 
+// After cloning git
 
 /*
 Prefer not to use var
