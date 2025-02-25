@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        let listele = document.createElement("li");
+        listele.innerHTML=`${langName}`
+        document.querySelector('.language').appendChild(listele)
+    }
+    addLanguage("Python")
+    addLanguage("C#")
+
+    // this is the optimized way to insert a node and it's text to the dom
+    function addOptiLanguage(langName){
+        let listele = document.createElement('li');
+        listele.appendChild(document.createTextNode(langName))  
+        //adding the text using createTextNode() Method reduces the effort of traversing through entire code, which optimizes the code and improves code performance
+        document.querySelector('.language').appendChild(listele)        
+    }
+
+    addOptiLanguage("GoLang");
+
+    //Edit the dom element
+
+    let secondLang = document.querySelector('li:nth-child(2)');
+    //secondLang.innerHTML = "Mojo"
+    let newLi = document.createElement("li");
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi)
+
+    //edit
+    let firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>Typescript</li>'
+
+    //remove
+    let lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+</script>
+</html>
