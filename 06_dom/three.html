@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color:#fff">    
+</body>
+<script>
+    let divvar = document.createElement('div');
+    divvar.className = "main"
+    divvar.id = Math.round(Math.random() * 10 + 1);
+    divvar.setAttribute("title","customElement");
+    divvar.style.backgroundColor="green"
+    divvar.style.padding="20px"
+    console.log(divvar);
+    //divvar.innerHTML = "Chai aur code";
+    let appdtext = document.createTextNode("Chai aur code 2")
+    divvar.appendChild(appdtext)
+
+    document.body.appendChild(divvar)
+</script>
+</html>
