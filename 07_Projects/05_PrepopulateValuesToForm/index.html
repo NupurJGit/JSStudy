@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propopulate form values</title>
+</head>
+<body>
+    <div class="main">
+            <input id="nonregisteredvalues" type="hidden" data-fname="Nupur" data-lname="Joshi" data-email="nupurjoshi@gmail.com"/>
+            <form action="submit" class="prepopulatingform">
+            <label>Firstname:</label>
+            <input type="text" id="fname" value=""/>
+
+            <label>Lastname:</label>
+            <input type="text" id="lname" value="">
+
+            <label>Email:</label>
+            <input type="text" id="email" value="">
+
+            <button type="submit" class="submitbutton">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+<script src="script.js"></script>
