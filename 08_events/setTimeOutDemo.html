@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Timeout Demo</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let timeoutFunc = function(){
+        document.getElementById('heading').innerHTML = "Ha HA ha aha ha ha aha aha aha";
+    }
+    let stopTimeOutFunc = setTimeout(timeoutFunc,2000);
+
+    document.getElementById('stop').addEventListener("click",function(){
+        clearTimeout(stopTimeOutFunc);
+        console.log("timeout stopped");
+        
+    },false)
+</script>
+</html>
