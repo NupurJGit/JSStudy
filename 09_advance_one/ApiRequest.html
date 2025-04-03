@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHR HTTP Request</title>
+</head>
+<body>
+   
+</body>
+<script>
+    //this is how we need to work with XMLHttpRequest
+    // let xhrreq = new XMLHttpRequest();
+    // xhrreq.open("GET","https://api.github.com/users/hiteshchoudhary");
+    // xhrreq.addEventListener("load",()=>{
+    //     console.log("ooenioree");
+    // });
+    // xhrreq.send();
+
+    //Assignment from Hitest
+    let reqUrl = "https://api.github.com/users/hiteshchoudhary";
+    let req = new XMLHttpRequest();
+    req.open("GET",reqUrl);
+    req.onreadystatechange = function(){
+        console.log(req.readyState);
+        if(req.readyState === 4){
+            console.log(typeof this.responseText)
+            let data = JSON.parse(this.responseText);            
+             console.log(data);
+             let photo = data.avatar_url;
+             console.log(photo);
+             
+            let bodyele = document.querySelector("body");
+            bodyele.innerHTML = `
+            <div class="card">
+                <div class="image col-mg-8">
+                    <image src="${photo}"/>
+                </div>
+                <div class="card-details col-mg-4" style="float:center;">
+                    <div>
+                        <p>${data.bio}</p>
+                        <p><strong>BlogPost Link:</strong>${data.blog}</p>
+                        <p>Total followers: ${data.followers} </p>
+                    </div>
+                </div>
+                </div>`;
+        }        
+    }
+    req.send();    
+</script>
+</html>
