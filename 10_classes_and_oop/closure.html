@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //lexical scoping practical
+    // function outer(){
+    //     let username = "abcd";
+    //     //console.log(`secret from before defining: ${secret}`); //this line gives error because secret is a variable defined inside a child function & it's not accessible to anywhere outside that function
+        
+    //     function innerOne(){
+    //         let secret = "hahahaha";
+    //         console.log(`username : ${username}`);            
+    //     }
+
+    //     function innerTwo(){
+    //         let secret2 = "tyrusiuhr";
+    //         console.log(`username : ${username}`);
+    //         //console.log(`secretOne: ${secret}`); //this line gives error because secret is a variable defined inside a child function & it's not accessible to anywhere outside that function
+    //     }
+    //     //console.log(`secret from after defining: ${secret}`); //this line gives error because secret is a variable defined inside a child function & it's not accessible to anywhere outside that function
+
+    //     innerOne();
+    //     innerTwo();
+    // }
+    // outer();
+
+
+    //Closure practical
+    function myfunction(){
+        let name = "Mozilla";
+        
+        function displayName(){
+            console.log(`Hoooooo ${name}`);            
+        }
+        return displayName;
+    }
+
+    let myfunc = myfunction();
+    myfunc();
+</script>
+</html>
